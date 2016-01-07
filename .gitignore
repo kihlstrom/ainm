@@ -1,0 +1,8 @@
+# Personal editor settings
+*.sublime-project
+*.sublime-workspace
+
+# Other
+.DS_Store
+Thumbs.db
+.codekit-cache
