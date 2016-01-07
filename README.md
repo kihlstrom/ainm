@@ -4,12 +4,12 @@ Ainm automatically creates a model with two-way binding based on input element n
 
 ## Example use
 HTML:
-    <input type="text" name="username">
+    &lt;input type="text" name="username"&gt;
     ...
-    <p>Hello <span data-ainm="username">unknown</span>!</p>
-    <p>Today it is <span data-aim="weekday">any day</span>.</p>
+    &lt;p&gt;Hello &lt;span data-ainm="username"&gt;unknown&lt;/span&gt;!&lt;/p&gt;
+    &lt;p&gt;Today it is &lt;span data-aim="weekday"&gt;any day&lt;/span&gt;.&lt;/p&gt;
     ...
-    <script type="text/javascript" src="ainm.js"></script>
+    &lt;script type="text/javascript" src="ainm.js"&gt;&lt;/script&gt;
 
 JavaScript:
     var model = new Ainm( document );
