@@ -1,0 +1,24 @@
+{
+  "name": "ainm",
+  "version": "1.0.0",
+  "description": "Automatic Input Name Model - Automatically creates view model from input elements in an html document.",
+  "main": "ainm.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kihlstrom/ainm.git"
+  },
+  "keywords": [
+    "binding",
+    "input",
+    "model"
+  ],
+  "author": "mattias@kihlstrom.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kihlstrom/ainm/issues"
+  },
+  "homepage": "https://github.com/kihlstrom/ainm#readme"
+}
