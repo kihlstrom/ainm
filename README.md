@@ -18,4 +18,4 @@ JavaScript:
     model.set( 'weekday', 'thursday' );
 
 ## What doesn't work?
-Select elements or textares elements are currently not supported.
+Select elements or textarea elements are currently not supported.
