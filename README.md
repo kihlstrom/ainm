@@ -4,6 +4,7 @@ Ainm automatically creates a model with two-way binding based on input element n
 
 ## Example use
 HTML:
+
     &lt;input type="text" name="username"&gt;
     ...
     &lt;p&gt;Hello &lt;span data-ainm="username"&gt;unknown&lt;/span&gt;!&lt;/p&gt;
@@ -12,6 +13,7 @@ HTML:
     &lt;script type="text/javascript" src="ainm.js"&gt;&lt;/script&gt;
 
 JavaScript:
+
     var model = new Ainm( document );
     model.set( 'weekday', 'thursday' );
 
