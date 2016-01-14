@@ -1,18 +1,21 @@
 /* -------- ---- -- -  -    -
 ** AINM = Automatic Input Name Model
 ** Automatically creates a model with two-way binding based on input element
-** names in the specified document. In order to display a value in another
-** element use the attribute data-ainm with the name of an input element as
-** attribute value.
-** Example: <span data-ainm="username"></span>
+** names. An optional root element can be specified in order to limit the
+** scope (or else all matching elements in the current document will be used).
+** In order to display a value in another element use the attribute data-ainm
+** with the name of an input element as attribute value.
+** Example:
+** <input type="text" name="username">
+** <span data-ainm="username"></span>
 ** (As it happens "ainm" means "name" in Irish.)
 ** ---- -- -  -    -
 */
-function Ainm( doc ) {
+function Ainm( root ) {
 
 	var _ATTRIBUTE = 'data-ainm';
 	var _model = {};
-	var _doc = doc || document;
+	var _root = root || document;
 
 
 
@@ -86,10 +89,10 @@ function Ainm( doc ) {
 		var element, elements, i;
 		var value = get( key );
 
-		if( _doc.querySelectorAll ) {
-			elements = _doc.querySelectorAll( 'input[name="' + key + '"], [' + _ATTRIBUTE + '="' + key + '"]' );
-		} else if( _doc.getElementsByTagName ) {
-			elements = _doc.getElementsByTagName( '*' );
+		if( _root.querySelectorAll ) {
+			elements = _root.querySelectorAll( 'input[name="' + key + '"], [' + _ATTRIBUTE + '="' + key + '"]' );
+		} else if( _root.getElementsByTagName ) {
+			elements = _root.getElementsByTagName( '*' );
 		} else {
 			return;
 		}
@@ -140,8 +143,8 @@ function Ainm( doc ) {
 	function init() {
 		var element, elements, i;
 
-		if( _doc.getElementsByTagName ) {
-			elements = _doc.getElementsByTagName( 'input' );
+		if( _root.getElementsByTagName ) {
+			elements = _root.getElementsByTagName( 'input' );
 		} else {
 			return;
 		}
