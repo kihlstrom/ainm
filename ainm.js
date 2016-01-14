@@ -1,5 +1,6 @@
 /* -------- ---- -- -  -    -
 ** AINM = Automatic Input Name Model
+** Version 1.0.1
 ** Automatically creates a model with two-way binding based on input element
 ** names. An optional root element can be specified in order to limit the
 ** scope (or else all matching elements in the current document will be used).
