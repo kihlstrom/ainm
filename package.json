@@ -1,6 +1,6 @@
 {
   "name": "ainm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatic Input Name Model - Automatically creates view model from input elements in an html document.",
   "main": "ainm.js",
   "scripts": {
