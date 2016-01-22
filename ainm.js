@@ -1,6 +1,6 @@
 /* -------- ---- -- -  -    -
 ** AINM = Automatic Input Name Model
-** Version 1.0.1
+** Version 1.1.0-alpha
 ** Automatically creates a model with two-way binding based on input element
 ** names. An optional root element can be specified in order to limit the
 ** scope (or else all matching elements in the current document will be used).
@@ -142,7 +142,7 @@ function Ainm( root ) {
 
 
 	function init() {
-		var element, elements, i;
+		var element, elements, i, key, value;
 
 		if( _root.getElementsByTagName ) {
 			elements = _root.getElementsByTagName( 'input' );
@@ -152,10 +152,20 @@ function Ainm( root ) {
 
 		for( i = 0; i < elements.length; i++ ) {
 			element = elements[ i ];
-			if( element.type === 'radio' ) {
-				addEvent( element, 'click', onChange );
-			} else {
-				addEvent( element, 'change', onChange );
+			key = element.getAttribute( _ATTRIBUTE ) || element.name;
+			if( key && typeof key === 'string' ) {
+				value = element.value;
+				if( element.type === 'radio' ) {
+					addEvent( element, 'click', onChange );
+					if( !element.checked ) {
+						value = undefined;
+					}
+				} else {
+					addEvent( element, 'change', onChange );
+				}
+				if( value !== undefined ) {
+					_model[ key ] = value;
+				}
 			}
 		}
 	}
