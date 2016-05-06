@@ -46,7 +46,7 @@ function Ainm( root ) {
 
 
 	function index( array, value ) {
-		for( var i = 0; i < array.length && array[ i ] !== value; i++ ){}
+		for( var i = 0; i < array.length && array[ i ] !== value; i++ ) {}
 		return i;
 	}
 
@@ -131,7 +131,7 @@ function Ainm( root ) {
 
 
 
-	function addEvent( element, type, handler) {
+	function addEvent( element, type, handler ) {
 		if( element.addEventListener ) {
 			element.addEventListener( type, handler );
 		} else if( element.attachEvent ) {
