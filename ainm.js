@@ -142,7 +142,7 @@ function Ainm( root ) {
 
 
 	function init() {
-		var element, elements, i, key, value;
+		var element, elements, i, key;
 
 		if( _root.getElementsByTagName ) {
 			elements = _root.getElementsByTagName( 'input' );
@@ -154,17 +154,20 @@ function Ainm( root ) {
 			element = elements[ i ];
 			key = element.getAttribute( _ATTRIBUTE ) || element.name;
 			if( key && typeof key === 'string' ) {
-				value = element.value;
 				if( element.type === 'radio' ) {
 					addEvent( element, 'click', onChange );
-					if( !element.checked ) {
-						value = undefined;
+					if( element.checked && _model[ key ] === undefined ) {
+						_model[ key ] = element.value;
+					}
+				} else if( element.type === 'checkbox' ) {
+					addEvent( element, 'click', onChange );
+					_model[ key ] = _model[ key ] || [];
+					if( element.checked ) {
+						_model[ key ].push( element.value );
 					}
 				} else {
 					addEvent( element, 'change', onChange );
-				}
-				if( value !== undefined ) {
-					_model[ key ] = value;
+					_model[ key ] = element.value;
 				}
 			}
 		}
